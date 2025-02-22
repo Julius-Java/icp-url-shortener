@@ -1,53 +1,44 @@
-# `url-shortener`
+# URL Shortener - Internet Computer
 
-Welcome to your new `url-shortener` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+A URL shortening service built on the Internet Computer platform. This application allows users to create shortened URLs and redirect to their original destinations.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Features
 
-To learn more before you start working with `url-shortener`, see the following documentation available online:
+- Create shortened URLs from long URLs
+- Copy shortened URLs to clipboard
+- Automatic redirection from short URLs to original URLs
+- Built on Internet Computer's decentralized infrastructure
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+## Tech Stack
 
-If you want to start working on your project right away, you might want to try the following commands:
+- Frontend: React with TypeScript
+- Backend: Motoko (Internet Computer)
+- UI Components: Shadcn UI
+- State Management: React Hooks
 
+## Local Development
+
+1. Install dependencies:
 ```bash
-cd url-shortener/
-dfx help
-dfx canister --help
+pnpm install
 ```
 
-## Running the project locally
-
-If you want to test your project locally, you can use the following commands:
-
+2. Start the local replica:
 ```bash
-# Starts the replica, running in the background
 dfx start --background
+```
 
-# Deploys your canisters to the replica and generates your candid interface
+3. Deploy the canisters:
+```bash
 dfx deploy
 ```
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
-
-If you have made changes to your backend canister, you can generate a new candid interface with
-
-```bash
-npm run generate
-```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
+4. Start the frontend development server:
 ```bash
 npm start
 ```
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+The application will be available at `http://localhost:8080`, proxying API requests to the replica at port 4943.
 
 ### Note on frontend environment variables
 
