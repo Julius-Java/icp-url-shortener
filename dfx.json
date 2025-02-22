@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "url-shortener-backend": {
+      "main": "src/url-shortener-backend/main.mo",
+      "type": "motoko"
+    },
+    "url-shortener-frontend": {
+      "dependencies": [
+        "url-shortener-backend"
+      ],
+      "source": [
+        "src/url-shortener-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "url-shortener-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
