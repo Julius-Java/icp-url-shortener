@@ -10,9 +10,7 @@ export default function UrlId() {
 
 	const { url_id } = useParams();
 
-	console.log(url_id);
-
-	async function getUrl() {
+async function getUrl() {
 		setLoadingUrl(true);
 		url_shortener_backend
 			.getUrl(url_id)

@@ -19,9 +19,9 @@ actor {
 
   stable var urls : [Url] = [];
 
-  let base_url = "http://c5kvi-uuaaa-aaaaa-qaaia-cai.localhost:4943/";
+  // let base_url = "https://6xhyy-ryaaa-aaaab-qacqa-cai.icp0.io/";
 
-  public func shorten_url(long_url : Text) : async Return<Text> {
+  public func shorten_url(long_url : Text, base_url: Text) : async Return<Text> {
     let url_id = await generateSimpleId();
 
     let url : Url = {
@@ -60,7 +60,7 @@ actor {
     };
   };
 
-  public func generateSimpleId() : async Text {
+  func generateSimpleId() : async Text {
     let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let size = 16;
     var id = "";

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Copy, Loader2, Check } from "lucide-react";
 import { Toaster, toast } from "sonner";
 import { url_shortener_backend } from "../../../declarations/url-shortener-backend";
+import { canisterId } from "../../../declarations/url-shortener-frontend";
 
 export type Result = {
 	data: any;
@@ -12,7 +13,10 @@ export type Result = {
 	message: string;
 };
 
+const BASE_URL = `https://${canisterId}.icp0.io/`;
+
 export default function Home() {
+	console.log("BASE_URL", BASE_URL);
 	const [url, setUrl] = useState("");
 	const [shortUrl, setShortUrl] = useState("");
 	const [loading, setLoading] = useState(false);
@@ -22,7 +26,7 @@ export default function Home() {
 		setLoading(true);
 		setShortUrl("");
 		url_shortener_backend
-			.shorten_url(url)
+			.shorten_url(url, BASE_URL)
 			.then((response: Result) => {
 				setShortUrl(response.data[0]);
 				toast.success(response.message);
